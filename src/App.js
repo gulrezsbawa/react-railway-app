@@ -3,15 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-   // eslint-disable-next-line
   const apiUrl = process.env.REACT_APP_API_URL;
   const [data,setData]=useState(null)
-   // eslint-disable-next-line
   useEffect(() => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setData(data));
-  }, []);
+  }, [apiUrl]);
 
   return (
     <div className="App">
